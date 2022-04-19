@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Index{% endblock %}
+
+{% block content%}
+<h1>Index화면</h1>
+    
+<ul>
+    <li><a href="{% url 'support:support-list' %}">FAQ 목록</a></li>
+</ul>
+{% endblock %}

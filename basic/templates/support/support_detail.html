@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}FAQ{% endblock %}
+
+{% block content%}
+<h2>FAQ 상세보기</h2>
+<div>
+    <from>
+        <table style="font-size:14px; width:600px">
+            <tr>
+                <td style="width:60px">유형</td>
+                <td>{{ faq_detail.get_ques_category_display }}</td>
+            </tr>
+            <tr>
+                <td>작성자</td>
+                <td>{{ faq_detail.writer }} | {{ faq_detail.created_at|date:"Y-m-d H:i:s" }}</td> 
+            </tr>
+            <tr>
+                <td>질문</td>
+                <td><textarea style="width : 60%; height: 100px" readonly>{{ faq_detail.question }}</textarea></td>
+            </tr>
+        </table>
+    </from>
+</div>
+<hr align="left" width="450px"/>
+<div>
+    <from>
+        <table style="font-size:14px; width:600px"> 
+            <tr>
+                <td>답변자</td>
+                <td>{{ faq_detail.last_updater }} | {{ faq_detail.updated_at|date:"Y-m-d H:i:s" }}</td>
+            </tr>
+            <tr>
+                <td style="width:60px">답변</td>
+                <td><textarea style="width : 60%; height: 100px" readonly>{{ faq_detail.answer }}</textarea></td>
+            </tr>
+        </table>
+    </from>
+</div>
+
+{% endblock %} 
